@@ -1,0 +1,2 @@
+$(document).ready(function(){function e(e){$(e).filter("[checked]").parent("label").addClass("checked"),$(e).css("display","none"),$(e).on("click",function(n){n.stopImmediatePropagation(),$(e).parent("label").removeClass("checked"),$(this).parent("label").addClass("checked")})}e('input[name="product"]'),e('input[name="model"]'),e('input[name="color"]'),e('input[name="problem"]')});
+//# sourceMappingURL=maps/common.js.map

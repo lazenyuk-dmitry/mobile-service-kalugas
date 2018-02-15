@@ -1,0 +1,235 @@
+//========== healper ===========//
+@import "helper/mixins";
+@import "helper/vareable";
+@import "helper/normalizefix";
+//========== Blocks ===========//
+@import "../blocks/head/main";
+@import "../blocks/header/header";
+/*========== Page Content ===========*/
+.page-content{
+  padding-bottom: 110px;
+  background: url("../img/main-bg-phone.png") no-repeat center;
+  background-position: center 465px;
+}
+
+.main-title{
+  text-align: center;
+  max-width: 622px;
+  margin: auto;
+  padding: 165px 0 15px 0;
+  &__big{
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+  }
+  &__small{
+    margin-top: 40px;
+    color: #d5d5d5;
+    font-size: 24px;
+  }
+}
+
+.select-product{
+  text-align: center;
+  &__btn{
+    font-weight: 400;
+    display: inline-block;
+    width: 180px;
+    height: 44px;
+    line-height: 44px;
+    border: 1px solid white;
+    border-radius: 22px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.4s;
+    &:nth-of-type(1){
+      margin-right: -50px;
+    }
+    &.checked{
+      background-color: white;
+      color: #000;
+      z-index: 2;
+      transition: 0.2s;
+    }
+  }
+  &__other{
+    color: #484848;
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 15px;
+  }
+}
+
+/*========== select-model ===========*/
+.select-model{
+  margin-top: 77px;
+  text-align: center;
+  &__title{
+
+  }
+  &__btn-group{
+    margin-top: 45px;
+  }
+  &__btn{
+    font-weight: 400;
+    margin: 15px;
+    display: inline-block;
+    width: 77px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    &.checked{
+      color: #000;
+      background-color: white;
+    }
+  }
+}
+
+/*========== select-color ===========*/
+.select-color{
+  text-align: center;
+  margin-top: 77px;
+  &__title{
+
+  }
+  &__btn-group{
+    margin-top: 40px;
+  }
+  &__btn{
+    max-width: 170px;
+    vertical-align: top;
+    font-size: 14px;
+    font-weight: 300;
+    &:before{
+      content: "";
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background: #1e1f21;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    &.checked{
+      &:before{
+        border: 1px solid #fff;
+      }
+    }
+  }
+}
+
+/*========== select-problem ===========*/
+.select-problem{
+  text-align: center;
+  margin-top: 95px;
+  &__notyfy{
+    margin-top: 15px;
+    color: #4c4c4c;
+    font-size: 14px;
+  }
+}
+.problem-form{
+  margin-top: 60px;
+  text-align: center;
+  &__side-item,
+  &__center-item{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  &__center-item{
+    margin: 0 67px;
+  }
+  &__side-item{
+    max-width: 380px;
+    width: 100%;
+  }
+}
+.advantages{
+  @include clr;
+  &__item-wrap{
+    float: right;
+  }
+  &__item{
+    text-align: center;
+    &+&{
+      margin-top: 35px;
+    }
+  }
+  &__title{
+    margin-top: 10px;
+    font-size: 14px;
+  }
+}
+.checked-problem{
+  text-align: left;
+  font-size: 14px;
+  &__item{
+    width: auto;
+    display: block;
+    text-align: left;
+    &+&{
+      margin-top: 15px;
+    }
+    &:before{
+      content: '';
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 5px;
+      width: 14px;
+      height: 14px;
+      border: 1px solid white;
+    }
+    &.checked{
+      &:before{
+        background-color: #ffe100;
+      }
+    }
+  }
+  &__link{
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+}
+
+.ic_men{
+  background-image: url("../img/icon/man_ic.png");
+  height: 52px;
+  width: 52px;
+}
+.ic_clock{
+  background-image: url("../img/icon/clock_ic.png");
+  height: 53px;
+  width: 53px;
+}
+.ic_agreement{
+  background-image: url("../img/icon/agreement_ic.png");
+  height: 54px;
+  width: 54px;
+}
+
+.problem-form__price{
+  font-size: 19px;
+  margin-top: 23px;
+}
+.problem-form__price-notify{
+  display: block;
+  color: #464646;
+  font-size: 13px;
+  padding-top: 10px;
+}
+.problem-form__order{
+  width: 220px;
+  height: 62px;
+  line-height: 63px;
+  background: #ffa200 linear-gradient(144deg, #ffa200 0%, #ffe400 100%);
+  border-radius: 5px;
+  color: #030303;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 35px;
+}
+
+/*===== End of Page Content =========*/
+@import "../blocks/footer/footer";

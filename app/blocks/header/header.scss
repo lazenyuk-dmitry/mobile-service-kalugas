@@ -1,0 +1,46 @@
+@import "../../style/helper/vareable";
+
+/*=======   HEADER      =======*/
+.header{
+  padding: 20px 0;
+  font-size: 14px;
+}
+.you-city{
+  float: left;
+  &__btn{
+    width: auto;
+    &:hover{
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+    &:after{
+      margin-left: 8px;
+      content: '?';
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      line-height: 13px;
+      text-align: center;
+      border: 1px solid white;
+      border-radius: 3px;
+    }
+  }
+}
+
+.header-phone{
+  float: right;
+  &__link{
+    &:before{
+      content: '';
+      display: inline-block;
+      background: url("../img/icon/phone_ic.png") no-repeat center;
+      width: 12px;
+      height: 13px;
+      margin-right: 10px;
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+/*======= / HEADER end  =======*/

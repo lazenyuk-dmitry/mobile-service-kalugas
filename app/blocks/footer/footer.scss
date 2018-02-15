@@ -1,0 +1,22 @@
+/*========== FOOTER ===========*/
+.footer{
+  text-align: center;
+  padding: 20px 0;
+  &__link{
+    display: inline-block;
+    font-size: 14px;
+    &-wrap{
+      max-width: 250px;
+      width: 100%;
+      display: inline-block;
+    }
+    &_underline{
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+    &_center{
+
+    }
+  }
+}
+/*===== End of FOOTER =========*/
