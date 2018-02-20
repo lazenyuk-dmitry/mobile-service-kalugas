@@ -1,0 +1,87 @@
+@import "../../style/helper/mixins";
+/*========== modal ===========*/
+.mfp-bg{
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+.mfp-wrap{
+  overflow-x: auto !important;
+}
+.mfp-container{
+  padding: 0 10px;
+}
+.modal-contacts{
+  margin: 60px auto;
+  max-width: 580px;
+  min-width: 320px;
+  position: relative;
+}
+.modal-close{
+  display: block;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  background: url("../img/icon/close-x_ic.png") no-repeat center;
+  position: absolute;
+  right: -15px;
+  top: -20px;
+  @media (max-width: 630px){
+    right: 5px;
+  }
+}
+
+.contacts-form{
+  background: #F5F5F5 linear-gradient(-38deg, rgba(246, 246, 246, 0.21) 0%, rgba(231, 231, 231, 0.21) 100%);
+  border-radius: 5px;
+  padding: 30px 10px;
+  color: #000;
+  text-align: center;
+  &__header{
+    font-size: 28px;
+    font-weight: 400;
+  }
+  &__notify-text{
+    margin-top: 10px;
+    color: #5d5d5d;
+    font-size: 14px;
+    font-weight: 300;
+  }
+  &__input{
+    max-width: 410px;
+    width: 100%;
+    display: block;
+    margin: auto;
+    height: 46px;
+    background-color: white;
+    border-radius: 5px;
+    color: #828282;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 0 24px;
+    &:nth-of-type(1){
+      margin-top: 40px;
+    }
+    &+&{
+      margin-top: 25px;
+    }
+  }
+  &__send-btn{
+    max-width: 220px;
+    height: 62px;
+    line-height: 62px;
+    background: #ffa200 linear-gradient(144deg, #ffa200 0%, #ffe400 100%);
+    border-radius: 5px;
+    color: #010101;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 45px;
+    &:hover{
+      color: #010101;
+      box-shadow: 0 0 50px -9px #ffe400;
+    }
+  }
+}
+
+
+/*===== End of modal =========*/

@@ -3,125 +3,120 @@ html(lang='ru')
     head
         include blocks/head/head
     body
-        include blocks/header/header
-        
-        //========== Page Content ============
-        section.page-content
-            .wrapper
-                hgroup.main-title
-                    h1.main-title__big Выездной ремонт вашего  iPhone в Калуге
-                    h2.main-title__small Узнать цену за 30 секунд!
-                section.select-product
-                    .select-product__btn-group
-                        label.select-product__btn iPhone
-                            input(type='radio' name="product" value="iPhone" checked )
-                        label.select-product__btn iPad
-                            input(type='radio' name="product" value="iPad" )
-                    a(href="#").select-product__other другая техника Apple
+        .main-wrapper
+            include blocks/preloader/preloader
+            include blocks/header/header
 
-                section.select-model
-                    p.select-model__title.small-title Выберете модель iPhone:
-                    .select-model__btn-group
-                        label.btn.select-model__btn 4&4s
-                            input(type='radio' name="model" value=""  )
-                        label.btn.select-model__btn 5&5c
-                            input(type='radio' name="model" value="" checked )
-                        label.btn.select-model__btn 5s
-                            input(type='radio' name="model" value="" )
-                        label.btn.select-model__btn 6
-                            input(type='radio' name="model" value="" )
-                        label.btn.select-model__btn 6+
-                            input(type='radio' name="model" value="" )
-                        label.btn.select-model__btn 6s
-                            input(type='radio' name="model" value="" )
-                        label.btn.select-model__btn 6s+
-                            input(type='radio' name="model" value="" )
-                        label.btn.select-model__btn 7
-                            input(type='radio' name="model" value="" )
-                        label.btn.select-model__btn 7+
-                            input(type='radio' name="model" value="" )
-                        label.btn.select-model__btn 8
-                            input(type='radio' name="model" value="" )
+            //========== Page Content ============
+            section.page-content
+                .page-content__inner-wrap
+                    .wrapper
+                        hgroup.main-title
+                            h1.main-title__big Выездной ремонт вашего  iPhone в Калуге
+                            h2.main-title__small Узнать цену за 30 секунд!
+                        section.select-product
+                            .select-product__btn-group
+                                label.select-product__btn iPhone
+                                    input(type='radio' name="product" value="iPhone" checked )
+                                label.select-product__btn iPad
+                                    input(type='radio' name="product" value="iPad" )
+                            a(href="#").select-product__other другая техника Apple
 
-                section.select-color
-                    p.select-color__title.small-title Выберете цвет iPhone:
-                        .select-color__btn-group
-                            label.btn.select-color__btn
-                                input(type='radio' name="color" value="")
-                                br
-                                | Серебро
-                            label.btn.select-color__btn
-                                input(type='radio' name="color" value="" checked)
-                                br
-                                | Серый космос
-                            label.btn.select-color__btn
-                                input(type='radio' name="color" value="")
-                                br
-                                | Золото
+                        section.select-model
+                            img(src='img/main-bg-phone.png').select-model__bg-phone
+                            p.select-model__title.small-title Выберете модель iPhone:
+                            .select-model__btn-group
+                                //label.btn.select-model__btn 4&4s
+                                //    input(type='radio' name="model" value="")
+                                //label.btn.select-model__btn 5&5c
+                                //    input(type='radio' name="model" value="")
+                                //label.btn.select-model__btn 5s
+                                //    input(type='radio' name="model" value="")
+                                //label.btn.select-model__btn 6
+                                //    input(type='radio' name="model" value="")
+                                //label.btn.select-model__btn 6+
+                                //    input(type='radio' name="model" value="")
+                                //label.btn.select-model__btn 6s
+                                //    input(type='radio' name="model" value="")
+                                //label.btn.select-model__btn 6s+
+                                //    input(type='radio' name="model" value="")
+                                //label.btn.select-model__btn 7
+                                //    input(type='radio' name="model" value="")
+                                //label.btn.select-model__btn 7+
+                                //    input(type='radio' name="model" value="")
+                                //label.btn.select-model__btn 8
+                                //    input(type='radio' name="model" value="")
 
-                section.select-problem
-                    p.select-problem__title.small-title Выберите неисправность:
-                    p.select-problem__notyfy При выборе двух поломок вы получите скидку 10% на второй ремонт!
+                        section.select-color.wow.fadeInUp(data-wow-delay="0.6s")
+                            p.select-color__title.small-title Выберете цвет iPhone:
+                            .select-color__btn-group
+                                //label.btn.select-color__btn
+                                //    i.btn.select-color__btn_circle
+                                //        input(type='radio' name="color" value="")
+                                //        br
+                                //        | Серебро
+                                //label.btn.select-color__btn
+                                //    input(type='radio' name="color" value="")
+                                //    br
+                                //    | Серый космос
+                                //label.btn.select-color__btn
+                                //    input(type='radio' name="color" value="")
+                                //    br
+                                //    | Золото
 
-                    .problem-form
-                        .problem-form__side-item.problem-form__side-item_left.advantages
-                            .advantages__item-wrap
-                                .advantages__item
-                                    i.ic.ic_men
-                                    p.advantages__title Приезд мастера в
-                                        br
-                                        | течении 20 минут
-                                .advantages__item
-                                    i.ic.ic_clock
-                                    p.advantages__title Ремонт за 20 минут
-                                .advantages__item
-                                    i.ic.ic_agreement
-                                    p.advantages__title Гарантия 1 год
-                        .problem-form__center-item
-                            img(src="img/mobile-model.png").problem-form__center-img
-                        .problem-form__side-item.problem-form__side-item_right.checked-problem
-                            label.btn.checked-problem__item Разбитось стекло
-                                a(href="#").checked-problem__link Original
-                                input(type='radio' name="problem" value="")
-                            label.btn.checked-problem__item Разбился дисплей
-                                a(href="#").checked-problem__link Original
-                                input(type='radio' name="problem" value="" checked)
-                            label.btn.checked-problem__item Замена батарейки
-                                input(type='radio' name="problem" value="")
-                            label.btn.checked-problem__item Перестал заряжаться
-                                input(type='radio' name="problem" value="")
-                            label.btn.checked-problem__item Не работает кнопка “home”
-                                input(type='radio' name="problem" value="")
-                            label.btn.checked-problem__item Замена корпуса
-                                input(type='radio' name="problem" value="")
-                            label.btn.checked-problem__item Не работает основная камерa
-                                input(type='radio' name="problem" value="")
-                            label.btn.checked-problem__item Не работает передняя камера
-                                input(type='radio' name="problem" value="")
-                            label.btn.checked-problem__item Меня не слышно
-                                input(type='radio' name="problem" value="")
-                            label.btn.checked-problem__item Не слышно собеседника
-                                input(type='radio' name="problem" value="")
-                            label.btn.checked-problem__item Другие проблемы
-                                input(type='radio' name="problem" value="")
-                        p.problem-form__price Стоимость ремонта: 7980 ₽
-                            span.problem-form__price-notify Цена включает в себя ремонт, запчасти и выезд мастера.
+                        section.select-problem.wow.bounceIn(data-wow-delay="0.6s")
+                            p.select-problem__title.small-title Выберите неисправность:
+                            p.select-problem__notyfy При выборе двух поломок вы получите скидку 10% на второй ремонт!
 
-                        button(type="submit").btn.problem-form__order заказать
+                            .problem-form
+                                .problem-form__side-item.problem-form__side-item_left.advantages
+                                    .advantages__item-wrap
+                                        .advantages__item
+                                            i.ic.ic_men
+                                            p.advantages__title Приезд мастера в
+                                                br
+                                                | течении 20 минут
+                                        .advantages__item
+                                            i.ic.ic_clock
+                                            p.advantages__title Ремонт за 20 минут
+                                        .advantages__item
+                                            i.ic.ic_agreement
+                                            p.advantages__title Гарантия 1 год
+                                .problem-form__center-item
+                                    img(src="img/mobile-model.png").problem-form__center-img
+                                .problem-form__side-item.problem-form__side-item_right.checked-problem
+                                    //label.btn.checked-problem__item Разбитось стекло
+                                    //    a(href="#").checked-problem__link Original
+                                    //    input(type='checkbox' name="problem" value="")
+                                    //label.btn.checked-problem__item Разбился дисплей
+                                    //    a(href="#").checked-problem__link Original
+                                    //    input(type='checkbox' name="problem" value="")
+                                    //label.btn.checked-problem__item Замена батарейки
+                                    //    input(type='checkbox' name="problem" value="")
+                                    //label.btn.checked-problem__item Перестал заряжаться
+                                    //    input(type='checkbox' name="problem" value="")
+                                    //label.btn.checked-problem__item Не работает кнопка “home”
+                                    //    input(type='checkbox' name="problem" value="")
+                                    //label.btn.checked-problem__item Замена корпуса
+                                    //    input(type='checkbox' name="problem" value="")
+                                    //label.btn.checked-problem__item Не работает основная камерa
+                                    //    input(type='checkbox' name="problem" value="")
+                                    //label.btn.checked-problem__item Не работает передняя камера
+                                    //    input(type='checkbox' name="problem" value="")
+                                    //label.btn.checked-problem__item Меня не слышно
+                                    //    input(type='checkbox' name="problem" value="")
+                                    //label.btn.checked-problem__item Не слышно собеседника
+                                    //    input(type='checkbox' name="problem" value="")
+                                    //label.btn.checked-problem__item Другие проблемы
+                                    //    input(type='checkbox' name="problem" value="")
+                                .problem-form__price-wrap.wow.bounceIn(data-wow-delay="0.6s")
+                                    p.problem-form__price Стоимость ремонта:
+                                        span.js-price-output
+                                        | ₽
+                                        span.problem-form__price-notify Цена включает в себя ремонт, запчасти и выезд мастера.
 
+                                    a(href="#modal-contacts").btn.problem-form__order Вызвать мастера
 
-
-
-
-
-
-
-
-
-
-
-
-
-        //===== End of Page Content ==========
-
-        include blocks/footer/footer
+            //===== End of Page Content ==========
+            include blocks/footer/footer
+            include blocks/modal/modal

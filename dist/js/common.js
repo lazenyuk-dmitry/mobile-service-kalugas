@@ -1,2 +1,34 @@
-$(document).ready(function(){function e(e){$(e).filter("[checked]").parent("label").addClass("checked"),$(e).css("display","none"),$(e).on("click",function(n){n.stopImmediatePropagation(),$(e).parent("label").removeClass("checked"),$(this).parent("label").addClass("checked")})}e('input[name="product"]'),e('input[name="model"]'),e('input[name="color"]'),e('input[name="problem"]')});
+$(document).ready(function () {
+    /*============ styler form ==============*/
+
+    /*======= End of styler form ============*/
+
+    /*============ Events ==============*/
+
+    /*======= End of Events ============*/
+    /*============ Animate ==============*/
+    new WOW().init();
+    /*======= End of Animate ============*/
+
+    /*============ MODAL ==============*/
+    $('.problem-form__order').magnificPopup({
+        type: 'inline',
+        preloader: false,
+        modal: false,
+        closeOnBgClick: true,
+        showCloseBtn: false
+    });
+    $('.modal-close').on('click', function (e) {
+        e.stopPropagation();
+        $.magnificPopup.close();
+    });
+    /*======= End of MODAL ============*/
+
+    /*======== Preloader ========*/
+    function preloaderHid() {
+        document.querySelector('body').style.overflow = 'auto';
+        $('.preloader').css('display', 'none')
+    }
+    setTimeout(preloaderHid, 100);
+});
 //# sourceMappingURL=maps/common.js.map

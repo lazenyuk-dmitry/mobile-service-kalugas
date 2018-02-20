@@ -1,7 +1,10 @@
+@import "../../style/helper/mixins";
 /*========== FOOTER ===========*/
 .footer{
   text-align: center;
   padding: 20px 0;
+  position: relative;
+  z-index: 1;
   &__link{
     display: inline-block;
     font-size: 14px;
@@ -9,10 +12,29 @@
       max-width: 250px;
       width: 100%;
       display: inline-block;
+      @include mq('mmm'){
+        width: 32%;
+      }
+      @include mq('mmm'){
+        width: 30%;
+        padding: 0 5px;
+      }
+      @include mq('ss'){
+        display: block;
+        text-align: center;
+        width: 100%;
+        max-width: none;
+        &+&{
+          margin-top: 10px;
+        }
+      }
     }
     &_underline{
       text-decoration: underline;
       text-decoration-style: dotted;
+      &:hover{
+        text-decoration: none;
+      }
     }
     &_center{
 

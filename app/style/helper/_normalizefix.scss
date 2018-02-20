@@ -36,7 +36,12 @@ h1 {
   margin: 0;
 }
 button,
-input{
+input,
+a{
   border: none;
   outline: none;
+  &:focus{
+    border: none;
+    outline: none;
+  }
 }

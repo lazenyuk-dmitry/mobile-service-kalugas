@@ -1,20 +1,33 @@
 $(document).ready(function () {
-    //$('input[type="radio"]').styler();
     /*============ styler form ==============*/
-    function checkedParrent(elem) {
-        $(elem).filter("[checked]").parent('label').addClass('checked');
-        $(elem).css('display', 'none');
-        $(elem).on('click', function (e) {
-            e.stopImmediatePropagation();
-            $(elem).parent('label').removeClass('checked');
-            $(this).parent('label').addClass('checked');
-        })
-    }
 
-    checkedParrent('input[name="product"]');
-    checkedParrent('input[name="model"]');
-    checkedParrent('input[name="color"]');
-    checkedParrent('input[name="problem"]');
     /*======= End of styler form ============*/
 
+    /*============ Events ==============*/
+
+    /*======= End of Events ============*/
+    /*============ Animate ==============*/
+    new WOW().init();
+    /*======= End of Animate ============*/
+
+    /*============ MODAL ==============*/
+    $('.problem-form__order').magnificPopup({
+        type: 'inline',
+        preloader: false,
+        modal: false,
+        closeOnBgClick: true,
+        showCloseBtn: false
+    });
+    $('.modal-close').on('click', function (e) {
+        e.stopPropagation();
+        $.magnificPopup.close();
+    });
+    /*======= End of MODAL ============*/
+
+    /*======== Preloader ========*/
+    function preloaderHid() {
+        document.querySelector('body').style.overflow = 'auto';
+        $('.preloader').css('display', 'none')
+    }
+    setTimeout(preloaderHid, 100);
 });

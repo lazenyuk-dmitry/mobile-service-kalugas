@@ -1,4 +1,5 @@
 //========== healper ===========//
+@charset "UTF-8";
 @import "helper/mixins";
 @import "helper/vareable";
 @import "helper/normalizefix";
@@ -7,9 +8,12 @@
 @import "../blocks/header/header";
 /*========== Page Content ===========*/
 .page-content{
-  padding-bottom: 110px;
-  background: url("../img/main-bg-phone.png") no-repeat center;
-  background-position: center 465px;
+  display: table-row;
+  height: 100%;
+  overflow: hidden;
+}
+.page-content__inner-wrap{
+  margin-bottom: 110px; /*========== fix display table ===========*/
 }
 
 .main-title{
@@ -17,15 +21,31 @@
   max-width: 622px;
   margin: auto;
   padding: 165px 0 15px 0;
+  @include mq('s'){
+    padding-top: 50px;
+  }
   &__big{
     font-size: 48px;
     font-weight: 700;
     text-align: center;
+    @include mq('s'){
+      font-size: 28px;
+    }
+    @include mq('ss'){
+      font-size: 22px;
+    }
+    //@include mq('ss'){
+    //  font-size: 22px;
+    //}
   }
   &__small{
     margin-top: 40px;
     color: #d5d5d5;
     font-size: 24px;
+    @include mq('s'){
+      font-size: 16px;
+      margin-top: 30px;
+    }
   }
 }
 
@@ -42,6 +62,9 @@
     position: relative;
     cursor: pointer;
     transition: 0.4s;
+    @include mq('ss'){
+      width: 160px;
+    }
     &:nth-of-type(1){
       margin-right: -50px;
     }
@@ -64,6 +87,27 @@
 .select-model{
   margin-top: 77px;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  &__bg-phone{
+    position: absolute;
+    z-index: -1;
+    top: -47px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mq('sm'){
+      max-width: 500px;
+      top: -35px;
+    }
+    @include mq('2'){
+      max-width: 400px;
+      top: -24px;
+    }
+    @include mq('ss'){
+      max-width: 300px;
+      top: -15px;
+    }
+  }
   &__title{
 
   }
@@ -74,12 +118,24 @@
     font-weight: 400;
     margin: 15px;
     display: inline-block;
-    width: 77px;
+    min-width: 77px;
+    width: auto;
+    padding: 0 10px;
     height: 45px;
     line-height: 45px;
     text-align: center;
     border: 1px solid white;
     border-radius: 5px;
+    &:hover{
+      color: #000;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    @include mq('sss'){
+      width: 51px;
+      height: 30px;
+      font-size: 12px;
+      line-height: 30px;
+    }
     &.checked{
       color: #000;
       background-color: white;
@@ -91,6 +147,12 @@
 .select-color{
   text-align: center;
   margin-top: 77px;
+  display: none;
+  position: relative;
+  z-index: 1;
+  &.visible{
+    display: block;
+  }
   &__title{
 
   }
@@ -102,8 +164,17 @@
     vertical-align: top;
     font-size: 14px;
     font-weight: 300;
-    &:before{
-      content: "";
+    @include mq('s'){
+      max-width: 100px;
+    }
+    @include mq('ss'){
+      max-width: none;
+      display: block;
+      &+&{
+        margin-top: 20px;
+      }
+    }
+    &_circle{
       display: inline-block;
       width: 50px;
       height: 50px;
@@ -112,8 +183,8 @@
       margin-bottom: 10px;
     }
     &.checked{
-      &:before{
-        border: 1px solid #fff;
+      .select-color__btn_circle{
+        border: 2px solid #606060;
       }
     }
   }
@@ -123,6 +194,12 @@
 .select-problem{
   text-align: center;
   margin-top: 95px;
+  display: none;
+  position: relative;
+  z-index: 1;
+  &.visible{
+    display: block;
+  }
   &__notyfy{
     margin-top: 15px;
     color: #4c4c4c;
@@ -132,17 +209,71 @@
 .problem-form{
   margin-top: 60px;
   text-align: center;
+  @include mq('l'){
+    text-align: left;
+    padding: 0 20px;
+  }
+  @include mq('mmm'){
+    padding: 0;
+  }
+  @include mq('sm'){
+    text-align: left;
+  }
+  @include mq('sss'){
+    text-align: center;
+  }
   &__side-item,
   &__center-item{
+    width: 33.33%;
     display: inline-block;
     vertical-align: middle;
+    margin: 0 -5px;
+    @include mq('l'){
+      width: auto;
+      max-width: 250px;
+    }
+    @include mq('sss'){
+
+    }
   }
   &__center-item{
-    margin: 0 67px;
+    text-align: center;
+    padding: 0 20px;
+    @include mq('l'){
+      width: 100%;
+      max-width: 320px;
+    }
+    @include mq('mm'){
+      //margin: 0 30px;
+    }
+    @include mq('sss'){
+      display: none;
+    }
   }
   &__side-item{
-    max-width: 380px;
-    width: 100%;
+    //max-width: 380px;
+    //width: 100%;
+    @include mq('xl'){
+      //max-width: 250px;
+    }
+    @include mq('l'){
+      //width: auto;
+      //max-width: 220px;
+    }
+    @include mq('sm'){
+
+    }
+  }
+  @include mq('l'){
+    //padding-left: 30px;
+    //padding-right: 30px;
+  }
+  @include mq('sm'){
+    //padding-left: 0;
+    //padding-right: 0;
+  }
+  @include mq('ss'){
+    //text-align: left;
   }
 }
 .advantages{
@@ -160,14 +291,22 @@
     margin-top: 10px;
     font-size: 14px;
   }
+  @include mq('sm'){
+    display: none;
+  }
 }
 .checked-problem{
   text-align: left;
   font-size: 14px;
+  position: relative;
+  z-index: 1;
   &__item{
     width: auto;
     display: block;
     text-align: left;
+    @include mq('xl'){
+
+    }
     &+&{
       margin-top: 15px;
     }
@@ -208,9 +347,25 @@
   width: 54px;
 }
 
+.problem-form__price-wrap{
+  display: none;
+  &.visible{
+    display: block;
+  }
+}
+
 .problem-form__price{
   font-size: 19px;
   margin-top: 23px;
+  @include mq('l'){
+    //text-align: left;
+    margin-top: 60px;
+    //padding-left: 40px;
+  }
+  @include mq('sm'){
+    text-align: center;
+    padding-left: 0;
+  }
 }
 .problem-form__price-notify{
   display: block;
@@ -228,8 +383,22 @@
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
-  margin-top: 35px;
+  display: block;
+  margin: 35px auto 0 auto ;
+  @include mq('l'){
+    margin-left: 0;
+  }
+  @include mq('sm'){
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &:hover{
+    color: #030303;
+    box-shadow: 0 0 60px -20px #ffe400;
+  }
 }
 
 /*===== End of Page Content =========*/
 @import "../blocks/footer/footer";
+@import "../blocks/modal/modal";

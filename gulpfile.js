@@ -34,11 +34,13 @@ var path = {
         css: [
             'bower_components/reset.scss/reset.css',
             'bower_components/normalize-css/normalize.css',
-            'bower_components/jquery.form-styler/dist/jquery.formstyler.css'
+            'bower_components/magnific-popup/dist/magnific-popup.css',
+            'bower_components/animate.css/animate.css'
         ],
         js: [
             'bower_components/jquery/dist/jquery.min.js',
-            'bower_components/jquery.form-styler/dist/jquery.formstyler.js'
+            'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
+            'bower_components/wow/dist/wow.js'
         ]
     },
     copy: {
@@ -52,7 +54,7 @@ var path = {
         pug: 'app/*.pug',
         scss: 'app/style/*.scss',
         js: 'app/js/*.js',
-        img: 'app/img/**/*.*',
+        img: ['app/img/**/*.*', '!app/img/hidden/**/*.*'],
         fonts: 'app/fonts/**/*.*'
     },
     dist: {
@@ -131,12 +133,12 @@ gulp.task('jsCommon', function() {
     return gulp.src(path.app.js)
         .pipe(plumber({errorHandler: notify.onError({
                 message: "Error: <%= error.message %>",
-                title: "JS COMMON CONCAT ERROR"
+                title: "JS COMMON ERROR"
             })}))
         .pipe(changed(path.dist.js))
         .pipe(sourcemap.init())
         .pipe(include())
-        .pipe(uglify())
+        //.pipe(uglify())
         //.pipe(rename({suffix: '.min'}))
         .pipe(sourcemap.write(path.sourcemap))
         .pipe(gulp.dest(path.dist.js))
@@ -188,21 +190,21 @@ gulp.task('imgmin', function() {
                 title: "IMGMIN ERROR"
             })}))
         .pipe(changed(path.dist.img))
-        .pipe(imagemin([
-            imagemin.gifsicle({interlaced: true}),
-            imagemin.jpegtran({progressive: true}),
-            imageminJpegRecompress({
-                loops: 5,
-                min: 80,
-                max: 95,
-                quality:'medium'
-            }),
-            imagemin.svgo(),
-            imagemin.optipng({optimizationLevel: 3}),
-            pngquant({quality: '80-95', speed: 5})
-        ],{
-            verbose: true
-        }))
+        // .pipe(imagemin([
+        //     imagemin.gifsicle({interlaced: true}),
+        //     imagemin.jpegtran({progressive: true}),
+        //     imageminJpegRecompress({
+        //         loops: 5,
+        //         min: 90,
+        //         max: 100,
+        //         quality:'high' //low, medium, high and veryhigh
+        //     }),
+        //     imagemin.svgo(),
+        //     imagemin.optipng({optimizationLevel: 3}),
+        //     pngquant({quality: '90-100', speed: 5})
+        // ],{
+        //     verbose: true
+        // }))
         .pipe(gulp.dest(path.dist.img))
         .pipe(browserSync.reload({stream: true}));
 });

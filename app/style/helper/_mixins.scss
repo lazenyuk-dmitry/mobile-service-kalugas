@@ -2,12 +2,30 @@
 //---- media question
 $breakpoints: (
         'xs': 320px,
-        's': 480px,
-        'm': 768px,
-        'l': 990px,
-        'xl': 1140px,
+        'ss': 420px,
+        '2': 550px,
+        'sss': 600px,
+        's': 700px,
+        'sm': 740px,
+        'm': 810px,
+        'mm': 830px,
+        'mmm': 860px,
+        'l': 980px,
+        'xl': 1150px,
         //'xxl': 1090px
 );
+// mq
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
 
 @mixin media($width) {
   $width: map_get($breakpoints, $width);
