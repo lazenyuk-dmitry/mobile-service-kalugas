@@ -11,7 +11,7 @@ $(document).ready(function () {
     /*======= End of Animate ============*/
 
     /*============ MODAL ==============*/
-    $('.problem-form__order').magnificPopup({
+    $('.js-simple-modal').magnificPopup({
         type: 'inline',
         preloader: false,
         modal: false,

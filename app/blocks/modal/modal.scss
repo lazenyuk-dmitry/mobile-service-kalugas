@@ -83,5 +83,31 @@
   }
 }
 
+.social-modal{
+  margin: 50px 0;
+  &__link{
+    margin: 0 -3px;
+    width: 117px;
+    height: 117px;
+    @include mq('sss'){
+      background-size: cover;
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+.ic_whatsapp{
+  background-image: url("../img/icon/whatsap_ic.png");
+}
+.ic_vk{
+  background-image: url("../img/icon/vk_ic.png");
+}
+.ic_insta{
+  background-image: url("../img/icon/insta_ic.png");
+  position: relative;
+  z-index: 1;
+}
+
 
 /*===== End of modal =========*/

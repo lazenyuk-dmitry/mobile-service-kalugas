@@ -113,7 +113,7 @@
                                 <!--    | Золото-->
                             </div>
                         </section>
-                        <section class="select-problem wow bounceIn" data-wow-delay="0.6s">
+                        <section class="select-problem wow fadeInUp" data-wow-delay="0.6s">
                             <p class="select-problem__title small-title">Выберите неисправность:</p>
                             <p class="select-problem__notyfy">При выборе двух поломок вы получите скидку 10% на второй ремонт!</p>
                             <div class="problem-form">
@@ -163,12 +163,12 @@
                                     <!--label.btn.checked-problem__item Другие проблемы-->
                                     <!--    input(type='checkbox' name="problem" value="")-->
                                 </div>
-                                <div class="problem-form__price-wrap wow bounceIn" data-wow-delay="0.6s">
+                                <div class="problem-form__price-wrap wow fadeInUp">
                                     <p class="problem-form__price">Стоимость ремонта:
                                         <span class="js-price-output"></span>₽
                                         <span class="problem-form__price-notify">Цена включает в себя ремонт, запчасти и выезд мастера.</span>
                                     </p>
-                                    <a class="btn problem-form__order" href="#modal-contacts">Вызвать мастера</a>
+                                    <a class="btn problem-form__order js-simple-modal" href="#modal-order">Вызвать мастера</a>
                                 </div>
                             </div>
                         </section>
@@ -180,13 +180,13 @@
             <footer class="footer">
                 <div class="wrapper">
                     <div class="footer__link-wrap">
-                        <a class="footer__link footer__link_underline" href="#">Наши контакты</a>
+                        <a class="js-simple-modal footer__link footer__link_underline" href="#modal-contacts">Наши контакты</a>
                     </div>
                     <div class="footer__link-wrap">
-                        <a class="footer__link footer__link_center" href="#">Сотрудничество</a>
+                        <a class="js-simple-modal footer__link footer__link_center" href="#modal-cooperation">Сотрудничество</a>
                     </div>
                     <div class="footer__link-wrap">
-                        <a class="footer__link" href="#">Вакансии</a>
+                        <a class="js-simple-modal footer__link" href="#modal-vacancies">Вакансии</a>
                     </div>
                 </div>
             </footer>
@@ -198,7 +198,7 @@
             <script src="js/common.js"></script>
             <!--===== End of Java Script ==========-->
             <!--========== modal ============-->
-            <div class="modal-contacts mfp-hide" id="modal-contacts">
+            <div class="modal-contacts mfp-hide" id="modal-order">
                 <button class="modal-close" type="button"></button>
                 <form class="contacts-form" action="#" method="post">
                     <h5 class="contacts-form__header">Оставьте свои контакты</h5>
@@ -206,6 +206,38 @@
                     <input class="contacts-form__input" type="text" placeholder="Ваше имя">
                     <input class="contacts-form__input" type="tel" placeholder="Ваш номер телефона">
                     <button class="btn contacts-form__send-btn" type="submit">Вызвать мастера</button>
+                </form>
+            </div>
+            <div class="modal-contacts mfp-hide" id="modal-vacancies">
+                <button class="modal-close" type="button"></button>
+                <form class="contacts-form" action="#" method="post">
+                    <h5 class="contacts-form__header">Заполните форму</h5>
+                    <p class="contacts-form__notify-text">и мы свяжемся с вами в течении 5 минут</p>
+                    <input class="contacts-form__input" type="text" placeholder="Ваше имя">
+                    <input class="contacts-form__input" type="tel" placeholder="Ваш номер телефона">
+                    <button class="btn contacts-form__send-btn" type="submit">Оформить заявку</button>
+                </form>
+            </div>
+            <div class="modal-contacts mfp-hide" id="modal-cooperation">
+                <button class="modal-close" type="button"></button>
+                <form class="contacts-form" action="#" method="post">
+                    <h5 class="contacts-form__header">Заполните данные</h5>
+                    <p class="contacts-form__notify-text">и мы свяжемся с вами в течении 5 минут</p>
+                    <input class="contacts-form__input" type="text" placeholder="Ваше имя">
+                    <input class="contacts-form__input" type="tel" placeholder="Ваш номер телефона">
+                    <button class="btn contacts-form__send-btn" type="submit">Оформить заявку</button>
+                </form>
+            </div>
+            <div class="modal-contacts mfp-hide" id="modal-contacts">
+                <button class="modal-close" type="button"></button>
+                <form class="contacts-form" action="#" method="post">
+                    <h5 class="contacts-form__header">Наши контакты</h5>
+                    <p class="contacts-form__notify-text">пишите в любое время суток</p>
+                    <div class="social-modal">
+                        <a class="ic ic_whatsapp social-modal__link" href="#"></a>
+                        <a class="ic ic_insta social-modal__link" href="#"></a>
+                        <a class="ic ic_vk social-modal__link" href="#"></a>
+                    </div>
                 </form>
             </div>
             <!--===== End of modal ==========-->

@@ -116,7 +116,7 @@ $(document).ready(function () {
                 $('.problem-form__price-wrap').removeClass('visible');
             }
 
-            $('.js-price-output').html(priceTotal);
+            $('.js-price-output').html(' от ' + priceTotal);
         });
     }
     /*======= End of output list ============*/
