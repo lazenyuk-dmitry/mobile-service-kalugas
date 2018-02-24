@@ -260,6 +260,8 @@ img, video { max-width: 100%; height: auto; }
 
 .contacts-form__input { max-width: 410px; width: 100%; display: block; margin: auto; height: 46px; background-color: white; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #828282; font-size: 14px; font-weight: 300; padding: 0 24px; }
 
+.contacts-form__input.error { border: 1px solid red; }
+
 .contacts-form__input:nth-of-type(1) { margin-top: 40px; }
 
 .contacts-form__input + .contacts-form__input { margin-top: 25px; }

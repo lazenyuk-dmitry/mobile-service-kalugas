@@ -13,13 +13,16 @@ $(document).ready(function () {
         prodName = prodBtn.filter(':checked').val();
         var outputBox = $('.select-model__btn-group');
         outputBox.empty();
-        for (var name in priceList[prodName].model){
-            var elem = '<label class="btn select-model__btn">'+ name +'\n' +
-                            '<input type="radio" name="model" value="'+ name +'"> </label>';
+        var modelArr = priceList[prodName].model;
+        for (var name in modelArr){
+            var elem = '<label class="btn select-model__btn">'+ modelArr[name].name +'\n' +
+                            '<input type="radio" name="model" value="'+ modelArr[name].name +'" data-model="'+ name +'"> </label>';
             outputBox.append(elem);
         }
         // img
-        $('.problem-form__center-img').attr('src', priceList[prodName].img)
+        $('.problem-form__center-img').attr('src', priceList[prodName].img);
+        $('.select-model__title > .js-out').html(prodName);
+        $('.select-color__title > .js-out').html(prodName);
 
         checkedRadio('input[name="product"]');
         checkedRadio('input[name="model"]');
@@ -48,7 +51,7 @@ $(document).ready(function () {
     function OutputColor() {
         $('.select-problem').removeClass('visible');
         $('.problem-form__price-wrap').removeClass('visible');
-        modelName = modelBtn.filter(':checked').val();
+        modelName = modelBtn.filter(':checked').data('model');
         var outputBox = $('.select-color__btn-group');
         outputBox.empty();
         var arr = priceList[prodName].model[modelName].color;
@@ -73,7 +76,7 @@ $(document).ready(function () {
 
 //output problem
     function OutputProblem() {
-        modelName = modelBtn.filter(':checked').val();
+        //modelName = modelBtn.filter(':checked').val();
         var outputBox = $('.checked-problem');
         outputBox.empty();
         var arr = priceList[prodName].model[modelName].price;
@@ -81,11 +84,11 @@ $(document).ready(function () {
             if(arr[name][1] === 'Original'){
                 var elem = '<label class="btn checked-problem__item">'+ arr[name][0] +'\n' +
                             '<span class="checked-problem__link">Original</span>'+
-                                '<input type="checkbox" name="problem" value="'+ arr[name][0] +'" data-price="'+ arr[name][2] +'"></label>';
+                                '<input type="checkbox" name="problem" value=\''+ arr[name][0] +'\' data-price="'+ arr[name][2] +'"></label>';
             }
             else{
                 var elem = '<label class="btn checked-problem__item">'+ arr[name][0] +'\n' +
-                    '<input type="checkbox" name="problem" value="'+  arr[name][0] +'" data-price="'+ arr[name][1] +'"></label>';
+                    '<input type="checkbox" name="problem" value=\''+  arr[name][0] +'\' data-price="'+ arr[name][1] +'"></label>';
             }
 
             outputBox.append(elem);

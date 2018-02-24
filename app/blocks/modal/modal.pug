@@ -1,40 +1,40 @@
 //========== modal ============
 .modal-contacts#modal-order.mfp-hide
     button(type="button").modal-close
-    form(action='#' method="post").contacts-form
+    form(action='send-script/problem-form.php' method="post").contacts-form#order-form
         h5.contacts-form__header Оставьте свои контакты
         p.contacts-form__notify-text и мы свяжемся с вами в течении 5 минут
-        input(type="text" placeholder="Ваше имя").contacts-form__input
-        input(type="tel" placeholder="Ваш номер телефона").contacts-form__input
+        input(type="text" name="name" placeholder="Ваше имя" maxlength='40').contacts-form__input
+        input(type="tel" name="phone" placeholder="Ваш номер телефона" maxlength='40').contacts-form__input
         button(type="submit").btn.contacts-form__send-btn Вызвать мастера
 
 .modal-contacts#modal-vacancies.mfp-hide
-    button(type="button").modal-close
-    form(action='#' method="post").contacts-form
+    button(type="button" ).modal-close
+    form(method="post" novalidate).contacts-form#vacancies-form
         h5.contacts-form__header Заполните форму
         p.contacts-form__notify-text и мы свяжемся с вами в течении 5 минут
-        input(type="text" placeholder="Ваше имя").contacts-form__input
-        input(type="tel" placeholder="Ваш номер телефона").contacts-form__input
+        input(type="text" name="name" placeholder="Ваше имя" maxlength='40').contacts-form__input
+        input(type="tel" name="phone" placeholder="Ваш номер телефона" maxlength='40').contacts-form__input
         button(type="submit").btn.contacts-form__send-btn Оформить заявку
 
 .modal-contacts#modal-cooperation.mfp-hide
     button(type="button").modal-close
-    form(action='#' method="post").contacts-form
+    form(method="post" novalidate).contacts-form#cooperation-form
         h5.contacts-form__header Заполните данные
         p.contacts-form__notify-text и мы свяжемся с вами в течении 5 минут
-        input(type="text" placeholder="Ваше имя").contacts-form__input
-        input(type="tel" placeholder="Ваш номер телефона").contacts-form__input
+        input(type="text" name="name" placeholder="Ваше имя" maxlength='40').contacts-form__input
+        input(type="tel" name="phone" placeholder="Ваш номер телефона" maxlength='40').contacts-form__input
         button(type="submit").btn.contacts-form__send-btn Оформить заявку
 
 .modal-contacts#modal-contacts.mfp-hide
     button(type="button").modal-close
-    form(action='#' method="post").contacts-form
+    .contacts-form
         h5.contacts-form__header Наши контакты
         p.contacts-form__notify-text пишите в любое время суток
         .social-modal
-            a(href="#").ic.ic_whatsapp.social-modal__link
-            a(href="#").ic.ic_insta.social-modal__link
-            a(href="#").ic.ic_vk.social-modal__link
+            a(href="https://chat.whatsapp.com/invite/2UWYXccAWxoKmhriA2HWlF" target='_blank').ic.ic_whatsapp.social-modal__link
+            a(href="https://www.instagram.com/reappl/" target='_blank').ic.ic_insta.social-modal__link
+            a(href="https://vk.com/reappl" target='_blank').ic.ic_vk.social-modal__link
 
 
 

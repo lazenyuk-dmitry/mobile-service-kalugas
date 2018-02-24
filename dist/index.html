@@ -71,47 +71,14 @@
                         </section>
                         <section class="select-model">
                             <img class="select-model__bg-phone" src="img/main-bg-phone.png">
-                            <p class="select-model__title small-title">Выберете модель iPhone:</p>
-                            <div class="select-model__btn-group">
-                                <!--label.btn.select-model__btn 4&4s-->
-                                <!--    input(type='radio' name="model" value="")-->
-                                <!--label.btn.select-model__btn 5&5c-->
-                                <!--    input(type='radio' name="model" value="")-->
-                                <!--label.btn.select-model__btn 5s-->
-                                <!--    input(type='radio' name="model" value="")-->
-                                <!--label.btn.select-model__btn 6-->
-                                <!--    input(type='radio' name="model" value="")-->
-                                <!--label.btn.select-model__btn 6+-->
-                                <!--    input(type='radio' name="model" value="")-->
-                                <!--label.btn.select-model__btn 6s-->
-                                <!--    input(type='radio' name="model" value="")-->
-                                <!--label.btn.select-model__btn 6s+-->
-                                <!--    input(type='radio' name="model" value="")-->
-                                <!--label.btn.select-model__btn 7-->
-                                <!--    input(type='radio' name="model" value="")-->
-                                <!--label.btn.select-model__btn 7+-->
-                                <!--    input(type='radio' name="model" value="")-->
-                                <!--label.btn.select-model__btn 8-->
-                                <!--    input(type='radio' name="model" value="")-->
-                            </div>
+                            <p class="select-model__title small-title">Выберете модель
+                                <span class="js-out">iPhone</span>:</p>
+                            <div class="select-model__btn-group"></div>
                         </section>
                         <section class="select-color wow fadeInUp" data-wow-delay="0.6s">
-                            <p class="select-color__title small-title">Выберете цвет iPhone:</p>
-                            <div class="select-color__btn-group">
-                                <!--label.btn.select-color__btn-->
-                                <!--    i.btn.select-color__btn_circle-->
-                                <!--        input(type='radio' name="color" value="")-->
-                                <!--        br-->
-                                <!--        | Серебро-->
-                                <!--label.btn.select-color__btn-->
-                                <!--    input(type='radio' name="color" value="")-->
-                                <!--    br-->
-                                <!--    | Серый космос-->
-                                <!--label.btn.select-color__btn-->
-                                <!--    input(type='radio' name="color" value="")-->
-                                <!--    br-->
-                                <!--    | Золото-->
-                            </div>
+                            <p class="select-color__title small-title">Выберете цвет
+                                <span class="js-out">iPhone</span>:</p>
+                            <div class="select-color__btn-group"></div>
                         </section>
                         <section class="select-problem wow fadeInUp" data-wow-delay="0.6s">
                             <p class="select-problem__title small-title">Выберите неисправность:</p>
@@ -137,32 +104,7 @@
                                 <div class="problem-form__center-item">
                                     <img class="problem-form__center-img" src="img/mobile-model.png">
                                 </div>
-                                <div class="problem-form__side-item problem-form__side-item_right checked-problem">
-                                    <!--label.btn.checked-problem__item Разбитось стекло-->
-                                    <!--    a(href="#").checked-problem__link Original-->
-                                    <!--    input(type='checkbox' name="problem" value="")-->
-                                    <!--label.btn.checked-problem__item Разбился дисплей-->
-                                    <!--    a(href="#").checked-problem__link Original-->
-                                    <!--    input(type='checkbox' name="problem" value="")-->
-                                    <!--label.btn.checked-problem__item Замена батарейки-->
-                                    <!--    input(type='checkbox' name="problem" value="")-->
-                                    <!--label.btn.checked-problem__item Перестал заряжаться-->
-                                    <!--    input(type='checkbox' name="problem" value="")-->
-                                    <!--label.btn.checked-problem__item Не работает кнопка “home”-->
-                                    <!--    input(type='checkbox' name="problem" value="")-->
-                                    <!--label.btn.checked-problem__item Замена корпуса-->
-                                    <!--    input(type='checkbox' name="problem" value="")-->
-                                    <!--label.btn.checked-problem__item Не работает основная камерa-->
-                                    <!--    input(type='checkbox' name="problem" value="")-->
-                                    <!--label.btn.checked-problem__item Не работает передняя камера-->
-                                    <!--    input(type='checkbox' name="problem" value="")-->
-                                    <!--label.btn.checked-problem__item Меня не слышно-->
-                                    <!--    input(type='checkbox' name="problem" value="")-->
-                                    <!--label.btn.checked-problem__item Не слышно собеседника-->
-                                    <!--    input(type='checkbox' name="problem" value="")-->
-                                    <!--label.btn.checked-problem__item Другие проблемы-->
-                                    <!--    input(type='checkbox' name="problem" value="")-->
-                                </div>
+                                <div class="problem-form__side-item problem-form__side-item_right checked-problem"></div>
                                 <div class="problem-form__price-wrap wow fadeInUp">
                                     <p class="problem-form__price">Стоимость ремонта:
                                         <span class="js-price-output"></span>₽
@@ -200,45 +142,45 @@
             <!--========== modal ============-->
             <div class="modal-contacts mfp-hide" id="modal-order">
                 <button class="modal-close" type="button"></button>
-                <form class="contacts-form" action="#" method="post">
+                <form class="contacts-form" action="send-script/problem-form.php" method="post" id="order-form">
                     <h5 class="contacts-form__header">Оставьте свои контакты</h5>
                     <p class="contacts-form__notify-text">и мы свяжемся с вами в течении 5 минут</p>
-                    <input class="contacts-form__input" type="text" placeholder="Ваше имя">
-                    <input class="contacts-form__input" type="tel" placeholder="Ваш номер телефона">
+                    <input class="contacts-form__input" type="text" name="name" placeholder="Ваше имя" maxlength="40">
+                    <input class="contacts-form__input" type="tel" name="phone" placeholder="Ваш номер телефона" maxlength="40">
                     <button class="btn contacts-form__send-btn" type="submit">Вызвать мастера</button>
                 </form>
             </div>
             <div class="modal-contacts mfp-hide" id="modal-vacancies">
                 <button class="modal-close" type="button"></button>
-                <form class="contacts-form" action="#" method="post">
+                <form class="contacts-form" method="post" novalidate id="vacancies-form">
                     <h5 class="contacts-form__header">Заполните форму</h5>
                     <p class="contacts-form__notify-text">и мы свяжемся с вами в течении 5 минут</p>
-                    <input class="contacts-form__input" type="text" placeholder="Ваше имя">
-                    <input class="contacts-form__input" type="tel" placeholder="Ваш номер телефона">
+                    <input class="contacts-form__input" type="text" name="name" placeholder="Ваше имя" maxlength="40">
+                    <input class="contacts-form__input" type="tel" name="phone" placeholder="Ваш номер телефона" maxlength="40">
                     <button class="btn contacts-form__send-btn" type="submit">Оформить заявку</button>
                 </form>
             </div>
             <div class="modal-contacts mfp-hide" id="modal-cooperation">
                 <button class="modal-close" type="button"></button>
-                <form class="contacts-form" action="#" method="post">
+                <form class="contacts-form" method="post" novalidate id="cooperation-form">
                     <h5 class="contacts-form__header">Заполните данные</h5>
                     <p class="contacts-form__notify-text">и мы свяжемся с вами в течении 5 минут</p>
-                    <input class="contacts-form__input" type="text" placeholder="Ваше имя">
-                    <input class="contacts-form__input" type="tel" placeholder="Ваш номер телефона">
+                    <input class="contacts-form__input" type="text" name="name" placeholder="Ваше имя" maxlength="40">
+                    <input class="contacts-form__input" type="tel" name="phone" placeholder="Ваш номер телефона" maxlength="40">
                     <button class="btn contacts-form__send-btn" type="submit">Оформить заявку</button>
                 </form>
             </div>
             <div class="modal-contacts mfp-hide" id="modal-contacts">
                 <button class="modal-close" type="button"></button>
-                <form class="contacts-form" action="#" method="post">
+                <div class="contacts-form">
                     <h5 class="contacts-form__header">Наши контакты</h5>
                     <p class="contacts-form__notify-text">пишите в любое время суток</p>
                     <div class="social-modal">
-                        <a class="ic ic_whatsapp social-modal__link" href="#"></a>
-                        <a class="ic ic_insta social-modal__link" href="#"></a>
-                        <a class="ic ic_vk social-modal__link" href="#"></a>
+                        <a class="ic ic_whatsapp social-modal__link" href="https://chat.whatsapp.com/invite/2UWYXccAWxoKmhriA2HWlF" target="_blank"></a>
+                        <a class="ic ic_insta social-modal__link" href="https://www.instagram.com/reappl/" target="_blank"></a>
+                        <a class="ic ic_vk social-modal__link" href="https://vk.com/reappl" target="_blank"></a>
                     </div>
-                </form>
+                </div>
             </div>
             <!--===== End of modal ==========-->
         </div>

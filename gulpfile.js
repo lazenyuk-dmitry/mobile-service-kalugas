@@ -45,7 +45,8 @@ var path = {
     },
     copy: {
         input :[
-            'app/fonts/**/*.*'
+            'app/fonts/**/*.*',
+            'app/send-script/**/*.*'
         ],
         output: 'dist/'
     },
